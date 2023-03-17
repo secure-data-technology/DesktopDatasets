@@ -10,7 +10,13 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
         <ListBox>
-            
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
 
     </StackPanel>

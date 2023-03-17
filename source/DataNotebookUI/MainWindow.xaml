@@ -18,9 +18,9 @@
     </Window.DataContext>
     
     <DockPanel>
-        <view:DatasetNavigatorView DockPanel.Dock="Left" Background="Yellow" Width="200"></view:DatasetNavigatorView>
-        <view:DailyPriceView DockPanel.Dock="Top" Background="CadetBlue" Width="600" Height="200"></view:DailyPriceView>
-        <view:StatisticsView Background="Beige"  Width="600" Height="200"></view:StatisticsView>
-        <view:DataVisualizationView DockPanel.Dock="Bottom" Background="Azure" Width="600" Height="200"></view:DataVisualizationView>
+        <view:DatasetNavigatorView DockPanel.Dock="Left"  Width="200"></view:DatasetNavigatorView>
+        <view:DailyPriceView DockPanel.Dock="Top"  Width="600" Height="200"></view:DailyPriceView>
+        <view:StatisticsView DockPanel.Dock="Top"   Width="600" Height="200"></view:StatisticsView>
+        <view:DataVisualizationView DockPanel.Dock="Bottom"  Width="600" Height="200"></view:DataVisualizationView>
     </DockPanel>
 </Window>

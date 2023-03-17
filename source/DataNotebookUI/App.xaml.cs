@@ -13,5 +13,9 @@ namespace DataNotebookUI
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTM2MDQ0NUAzMjMwMmUzNDJlMzBhOENLV09hYzdMNUx5SkRDMW9ZWWhrSlJ1YmhDV3c3YjZTVXNFa1ZxdHk4PQ==");
+        }
     }
 }

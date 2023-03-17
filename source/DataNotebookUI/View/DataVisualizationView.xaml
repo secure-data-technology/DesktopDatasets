@@ -9,7 +9,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
-        <syncfusion:SfChart />
+        <!--<syncfusion:SfChart />-->
             <!--<Canvas >
                 <Polyline     Points="10,10 20,20 30,40, 40, 80, 50, 160, 60, 140, 70, 120, 80, 100, 90,80, 100,60"     Stroke="Black"     StrokeThickness="4"     />
             </Canvas>-->

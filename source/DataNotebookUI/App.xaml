@@ -6,6 +6,6 @@
              xmlns:local="clr-namespace:DataNotebookUI"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
     </Application.Resources>
 </Application>
