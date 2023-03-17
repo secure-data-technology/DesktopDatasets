@@ -18,6 +18,12 @@
     </Window.DataContext>
     
     <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open" IsCheckable="true" Command="{Binding Path=OpenDatasetCommand}"  />
+                <MenuItem Header="_Close" IsCheckable="true" />
+            </MenuItem>
+        </Menu>
         <view:DatasetNavigatorView DockPanel.Dock="Left"  Width="200"></view:DatasetNavigatorView>
         <view:DailyPriceView DockPanel.Dock="Top"  Width="600" Height="200"></view:DailyPriceView>
         <view:StatisticsView DockPanel.Dock="Top"   Width="600" Height="200"></view:StatisticsView>
