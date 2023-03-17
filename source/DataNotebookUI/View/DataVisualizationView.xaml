@@ -1,0 +1,18 @@
+﻿ <!-- Copyright 2023 Jeff Page -->
+    
+<UserControl xmlns:syncfusion="http://schemas.syncfusion.com/wpf"  x:Class="DataNotebookUI.View.DataVisualizationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DataNotebookUI.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <syncfusion:SfChart />
+            <!--<Canvas >
+                <Polyline     Points="10,10 20,20 30,40, 40, 80, 50, 160, 60, 140, 70, 120, 80, 100, 90,80, 100,60"     Stroke="Black"     StrokeThickness="4"     />
+            </Canvas>-->
+        
+    </StackPanel>
+</UserControl>
