@@ -1,20 +1,31 @@
 ﻿// Copyright 2023 Jeff Page
 
+using CommunityToolkit.Mvvm.ComponentModel;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace DataNotebookUI.ViewModel
 {
-    public class DatasetNavigationViewModel
+    public class DatasetNavigationViewModel : ObservableObject
     {
         public DatasetNavigationViewModel()
         {
-            FilePaths = new List<string>();
+            FilePaths = new ObservableCollection<String>();
         }
 
-        public List<String> FilePaths { get; set; }
+        public void AddFilePath(string filePath)
+        {
+            if (string.IsNullOrEmpty(filePath))
+            {
+                return;
+            }
+
+            if (!FilePaths.Contains(filePath))
+            {
+                FilePaths.Add(filePath);
+            }
+        }
+
+        public ObservableCollection<String> FilePaths { get; set; }
     }
 }

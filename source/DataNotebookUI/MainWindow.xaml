@@ -24,7 +24,7 @@
                 <MenuItem Header="_Close Dataset" IsCheckable="true" />
             </MenuItem>
         </Menu>
-        <view:DatasetNavigatorView x:Name="NavigatorView" DockPanel.Dock="Left"  Width="200"></view:DatasetNavigatorView>
+        <view:DatasetNavigatorView x:Name="NavigatorView" DataContext="{Binding  NavigationViewModel}" DockPanel.Dock="Left"  Width="200"></view:DatasetNavigatorView>
         <view:DailyPriceView x:Name="PriceDataView" DockPanel.Dock="Top"  Width="600" Height="200"></view:DailyPriceView>
         <view:StatisticsView  x:Name="StatisticsView" DockPanel.Dock="Top"   Width="600" Height="200"></view:StatisticsView>
         <view:DataVisualizationView x:Name="VisualizationView" DockPanel.Dock="Bottom"  Width="600" Height="200"></view:DataVisualizationView>
