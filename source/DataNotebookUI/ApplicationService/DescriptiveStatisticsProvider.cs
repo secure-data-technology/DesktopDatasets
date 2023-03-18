@@ -15,5 +15,14 @@ namespace DataNotebookUI.ApplicationService
             mean = descriptiveStatistics.Mean;
             return mean;
         }
+
+        public static double GetStandardDeviation(IEnumerable<double> data)
+        {
+            double mean = double.NaN;
+
+            var descriptiveStatistics = new DescriptiveStatistics(data);
+            mean = descriptiveStatistics.StandardDeviation;
+            return mean;
+        }
     }
 }
