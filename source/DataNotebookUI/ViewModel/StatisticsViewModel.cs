@@ -11,7 +11,12 @@ namespace DataNotebookUI.ViewModel
 {
     public class StatisticsViewModel
     {
-        public double Mean { get; set; }
-        public double StandardDeviation { get; set; }
+        public StatisticsViewModel()
+        {
+        }
+
+        public List<double> DataPoints { get; set; } 
+        public double Mean { get; private set; }
+        public double StandardDeviation { get; private set; }
     }
 }

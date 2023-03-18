@@ -4,6 +4,8 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DataNotebookUI.ApplicationService;
 using Microsoft.Win32;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DataNotebookUI.ViewModel
 {
@@ -14,6 +16,7 @@ namespace DataNotebookUI.ViewModel
             ProductName = ProductInformationProvider.GetProductName();
             ProductVersion = ProductInformationProvider.GetProductVersion();
             OpenDatasetCommand = new RelayCommand(OpenDataset);
+            CloseDatasetCommand = new RelayCommand(CloseDataset);
 
             NavigationViewModel = new DatasetNavigationViewModel();
             DataViewModel = new DailyPriceViewModel();
@@ -33,20 +36,29 @@ namespace DataNotebookUI.ViewModel
 
         public DataVisualizationViewModel VisualizationViewModel;
 
-        // e.g "C:\\repos\\DataNotebook\\DataNotebookUI\\Data\\coffee.csv"
         public string DatasetFilePath { get; set; }
 
         public RelayCommand OpenDatasetCommand { get; }
 
-        private void OpenDataset()
+        public RelayCommand CloseDatasetCommand { get; }
+
+        private async void OpenDataset()
         {
             var openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
             {
                 DatasetFilePath = openFileDialog.FileName;
-                NavigationViewModel.FilePaths.Add(DatasetFilePath);
+                NavigationViewModel.AddFilePath(DatasetFilePath);
+                await DataViewModel.GetDailyPrices(DatasetFilePath);
+                List<double> closingPrices = CsvDataProvider.GetPricesByType(DataViewModel.DailyPrices.ToList(), PriceType.ClosePrice);
+                StatisticsViewModel.DataPoints = closingPrices;
+                //VisualizationViewModel.
             }
 
+        }
+
+        private void CloseDataset()
+        {
         }
     }
 }

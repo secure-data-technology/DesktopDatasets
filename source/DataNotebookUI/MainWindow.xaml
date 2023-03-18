@@ -25,8 +25,8 @@
             </MenuItem>
         </Menu>
         <view:DatasetNavigatorView x:Name="NavigatorView" DataContext="{Binding  NavigationViewModel}" DockPanel.Dock="Left"  Width="200"></view:DatasetNavigatorView>
-        <view:DailyPriceView x:Name="PriceDataView" DockPanel.Dock="Top"  Width="600" Height="200"></view:DailyPriceView>
-        <view:StatisticsView  x:Name="StatisticsView" DockPanel.Dock="Top"   Width="600" Height="200"></view:StatisticsView>
-        <view:DataVisualizationView x:Name="VisualizationView" DockPanel.Dock="Bottom"  Width="600" Height="200"></view:DataVisualizationView>
+        <view:DailyPriceView x:Name="PriceDataView" DataContext="{Binding DataViewModel}"  DockPanel.Dock="Top"  Width="600" Height="200"></view:DailyPriceView>
+        <view:StatisticsView  x:Name="StatisticsView" DataContext="{Binding StatisticsViewModel}" DockPanel.Dock="Top"   Width="600" Height="200"></view:StatisticsView>
+        <view:DataVisualizationView x:Name="VisualizationView"  DataContext="{Binding VisualizationViewModel}"  DockPanel.Dock="Bottom"  Width="600" Height="200"></view:DataVisualizationView>
     </DockPanel>
 </Window>

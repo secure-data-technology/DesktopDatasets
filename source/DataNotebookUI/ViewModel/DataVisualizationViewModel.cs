@@ -11,6 +11,11 @@ namespace DataNotebookUI.ViewModel
 {
     public class DataVisualizationViewModel
     {
-        List<List<DailyPrice>> Datasets { get; set; }
+        public DataVisualizationViewModel()
+        {
+            Datasets = new List<List<double>>();
+        }
+
+        public List<List<double>> Datasets { get; set; }
     }
 }

@@ -9,24 +9,25 @@ using DataNotebookUI.Model;
 using System.Collections.ObjectModel;
 using DataNotebookUI.ApplicationService;
 using DataNotebookUI.Model;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace DataNotebookUI.ViewModel
 {
-    public class DailyPriceViewModel
+    public class DailyPriceViewModel : ObservableObject
     {
         public DailyPriceViewModel()
         {
-            DailyPrices = new List<DailyPrice>();
+            DailyPrices = new ObservableCollection<DailyPrice>();
         }
 
-        public List<DailyPrice> DailyPrices { get; set; }
+        public ObservableCollection<DailyPrice> DailyPrices { get; set; }
 
         public string ProductName { get; set; }
 
         public async Task GetDailyPrices(string filePath)
         {
             var dailyPrices = await CsvDataProvider.GetDailyPrices(filePath);
-            DailyPrices = dailyPrices;
+            DailyPrices =  new ObservableCollection<DailyPrice>(dailyPrices);
         }
     }
 }

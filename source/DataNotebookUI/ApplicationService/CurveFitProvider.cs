@@ -1,12 +1,7 @@
 ﻿// Copyright 2023 Jeff Page
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MathNet.Numerics;
-using MathNet.Numerics.LinearRegression;
+using System.Collections.Generic;
 
 namespace DataNotebookUI.ApplicationService
 {
@@ -42,5 +37,15 @@ namespace DataNotebookUI.ApplicationService
                 xValues[i] = i;
             }
         }
+
+        public static List<double> GenerateCurve(List<double> data, CurveParameters curveParameters)
+        {
+            var curveData = new List<double>();
+
+            // TODO
+
+            return curveData;
+        }
+
     }
 }
