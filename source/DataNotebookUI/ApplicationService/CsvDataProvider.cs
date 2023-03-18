@@ -10,6 +10,14 @@ using System.Threading.Tasks;
 
 namespace DataNotebookUI.ApplicationService
 {
+    public enum PriceType
+    {
+        OpenPrice,
+        HighPrice,
+        LowPrice,
+        ClosePrice
+    }
+
     public static class CsvDataProvider
     {
         public static List<string> GetCsvFiles(string folderPath, string pattern="*.csv")
@@ -33,6 +41,31 @@ namespace DataNotebookUI.ApplicationService
 
 
             return dailyPrices;
+        }
+
+        public static List<double> GetPricesByType(List<DailyPrice> dailyPrices, PriceType priceType)
+        {
+            List<double> typedPrices = null;
+            switch (priceType)
+            {
+                case PriceType.OpenPrice :
+                    typedPrices = dailyPrices.Select(dailyPrice => dailyPrice.OpenPrice).ToList();
+                    break;
+
+                case PriceType.HighPrice:
+                    typedPrices = dailyPrices.Select(dailyPrice => dailyPrice.HighPrice).ToList();
+                    break;
+
+                case PriceType.LowPrice:
+                    typedPrices = dailyPrices.Select(dailyPrice => dailyPrice.LowPrice).ToList();
+                    break;
+
+                case PriceType.ClosePrice:
+                    typedPrices = dailyPrices.Select(dailyPrice => dailyPrice.ClosePrice).ToList();
+                    break;
+            }
+
+            return typedPrices;
         }
     }
 }
