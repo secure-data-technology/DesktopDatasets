@@ -24,6 +24,7 @@ namespace DataNotebookUI
         public MainWindow()
         {
             InitializeComponent();
+         //   this.NavigatorView.FilesListBox.ItemsSource =
         }
     }
 }

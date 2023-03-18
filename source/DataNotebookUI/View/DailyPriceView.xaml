@@ -18,7 +18,8 @@
         <StaticResource ResourceKey="DailyPriceViewModel" />
     </UserControl.DataContext>
 
-    <StackPanel>
+    <StackPanel Orientation="Vertical">
+        <Label Content="Daily Prices"/>
         <ListView ItemsSource="{Binding DailyPrices}">
             <ListView.ItemTemplate>
                 <DataTemplate DataType="model:DailyPrice">
