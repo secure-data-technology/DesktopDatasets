@@ -17,16 +17,16 @@ namespace DataNotebookUI.ViewModel
         public DailyPriceViewModel()
         {
             DailyPrices = new List<DailyPrice>();
-            _ = GetDailyPrices();
         }
 
         public List<DailyPrice> DailyPrices { get; set; }
 
         public string ProductName { get; set; }
 
-        public async Task GetDailyPrices()
+        public async Task GetDailyPrices(string filePath)
         {
-            var dailyPrices = await CsvDataProvider.GetDailyPrices("C:\\repos\\DataNotebook\\DataNotebookUI\\Data\\coffee.csv");
+            var dailyPrices = await CsvDataProvider.GetDailyPrices(filePath);
+            DailyPrices = dailyPrices;
         }
     }
 }

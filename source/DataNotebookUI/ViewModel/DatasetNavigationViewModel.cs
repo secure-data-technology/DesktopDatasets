@@ -10,5 +10,11 @@ namespace DataNotebookUI.ViewModel
 {
     public class DatasetNavigationViewModel
     {
+        public DatasetNavigationViewModel()
+        {
+            FilePaths = new List<string>();
+        }
+
+        public List<String> FilePaths { get; set; }
     }
 }
