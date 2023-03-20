@@ -10,8 +10,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel Orientation="Vertical">
+        
         <Label Content="Data Visualization"/>
-        <visual:Chart>
+
+        <visual:Chart MinHeight="180">
             <visual:LineSeries>
                 <!--<visual:DataPointSeries.ItemsSource="">
                   
@@ -19,5 +21,6 @@
             </visual:LineSeries>
  
         </visual:Chart>
+        
     </StackPanel>
 </UserControl>

@@ -17,6 +17,7 @@ namespace DataNotebookUI.ViewModel
     {
         public DailyPriceViewModel()
         {
+            ProductName = string.Empty;
             DailyPrices = new ObservableCollection<DailyPrice>();
         }
 

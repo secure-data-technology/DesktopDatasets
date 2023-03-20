@@ -20,8 +20,8 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
-                <MenuItem Header="_Open Dataset" IsCheckable="true" Command="{Binding Path=OpenDatasetCommand}"  />
-                <MenuItem Header="_Close Dataset" IsCheckable="true" />
+                <MenuItem Header="_Open Dataset" Command="{Binding Path=OpenDatasetCommand}"  />
+                <MenuItem Header="_Close Dataset" Command="{Binding Path=CloseDatasetCommand}"  />
             </MenuItem>
         </Menu>
         <view:DatasetNavigatorView x:Name="NavigatorView" DataContext="{Binding  NavigationViewModel}" DockPanel.Dock="Left"  Width="200"></view:DatasetNavigatorView>

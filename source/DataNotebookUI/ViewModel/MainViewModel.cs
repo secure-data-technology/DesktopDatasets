@@ -30,11 +30,11 @@ namespace DataNotebookUI.ViewModel
 
         public DatasetNavigationViewModel NavigationViewModel { get; }
 
-        public DailyPriceViewModel DataViewModel;
+        public DailyPriceViewModel DataViewModel { get; }
 
-        public StatisticsViewModel StatisticsViewModel;
+        public StatisticsViewModel StatisticsViewModel { get; }
 
-        public DataVisualizationViewModel VisualizationViewModel;
+        public DataVisualizationViewModel VisualizationViewModel { get; }
 
         public string DatasetFilePath { get; set; }
 
@@ -52,13 +52,15 @@ namespace DataNotebookUI.ViewModel
                 await DataViewModel.GetDailyPrices(DatasetFilePath);
                 List<double> closingPrices = CsvDataProvider.GetPricesByType(DataViewModel.DailyPrices.ToList(), PriceType.ClosePrice);
                 StatisticsViewModel.DataPoints = closingPrices;
-                //VisualizationViewModel.
+                VisualizationViewModel.Datasets.Add(closingPrices);
             }
-
         }
 
         private void CloseDataset()
         {
+            VisualizationViewModel.Datasets.Clear();
+            StatisticsViewModel.DataPoints.Clear();
+            DataViewModel.DailyPrices.Clear();
         }
     }
 }

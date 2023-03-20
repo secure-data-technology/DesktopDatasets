@@ -6,16 +6,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataNotebookUI.Model;
+using CommunityToolkit.Mvvm.ComponentModel;
+using System.Collections.ObjectModel;
 
 namespace DataNotebookUI.ViewModel
 {
-    public class DataVisualizationViewModel
+    public class DataVisualizationViewModel : ObservableObject
     {
         public DataVisualizationViewModel()
         {
-            Datasets = new List<List<double>>();
+            Datasets = new ObservableCollection<List<double>>();
         }
 
-        public List<List<double>> Datasets { get; set; }
+        public ObservableCollection<List<double>> Datasets { get; set; }
     }
 }

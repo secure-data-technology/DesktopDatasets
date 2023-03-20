@@ -11,14 +11,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <!--<UserControl.Resources>
-        <vm:DatasetNavigationViewModel x:Key="DatasetNavigationViewModel"/>
-    </UserControl.Resources>
-    <UserControl.DataContext>
-        <StaticResource ResourceKey="DatasetNavigationViewModel" />
-    </UserControl.DataContext>-->
-    
-
     <StackPanel Orientation="Vertical">
         <Label Content="Datasets"/>
         <ListBox x:Name="FilesListBox" ItemsSource="{Binding FilePaths, UpdateSourceTrigger=PropertyChanged}" MinHeight="180" >

@@ -11,38 +11,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <UserControl.Resources>
-        <vm:DailyPriceViewModel x:Key="DailyPriceViewModel"/>
-    </UserControl.Resources>
-    <UserControl.DataContext>
-        <StaticResource ResourceKey="DailyPriceViewModel" />
-    </UserControl.DataContext>
-
     <StackPanel Orientation="Vertical">
         <Label Content="Daily Prices"/>
-        <ListView ItemsSource="{Binding DailyPrices}">
-            <ListView.ItemTemplate>
-                <DataTemplate DataType="model:DailyPrice">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="48"/>
-                            <ColumnDefinition Width="360"/>
-                            <ColumnDefinition Width="360"/>
-                            <ColumnDefinition Width="360"/>
-                            <ColumnDefinition Width="360"/>
-                            <ColumnDefinition Width="360"/>
-                            <ColumnDefinition Width="360"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="{Binding Path=Date}" />
-                        <TextBlock Grid.Column="1" VerticalAlignment="Center" Text="{Binding Path=OpenPrice}"/>
-                        <TextBlock Grid.Column="2" VerticalAlignment="Center" Text="{Binding Path=HighPrice}"/>
-                        <TextBlock Grid.Column="3" VerticalAlignment="Center" Text="{Binding Path=LowPrice}"/>
-                        <TextBlock Grid.Column="4" VerticalAlignment="Center" Text="{Binding Path=ClosePrice}"/>
-                        <TextBlock Grid.Column="5" VerticalAlignment="Center" Text="{Binding Path=Volume}"/>
-                        <TextBlock Grid.Column="6" VerticalAlignment="Center" Text="{Binding Path=Currency}"/>                        
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+
+        <DataGrid ItemsSource="{Binding DailyPrices, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Binding="{Binding Date, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Open" Binding="{Binding OpenPrice, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="High" Binding="{Binding HighPrice, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Low" Binding="{Binding LowPrice, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Close" Binding="{Binding ClosePrice, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Volume" Binding="{Binding Volume, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Currency" Binding="{Binding Currency, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </StackPanel>
 </UserControl>

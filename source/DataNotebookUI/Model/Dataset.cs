@@ -8,7 +8,9 @@ namespace DataNotebookUI.Model
 {
     public class Dataset
     {
+
         public string Name { get; set; }
         public string FilePath { get; set; }
+        public List<double> DataPoints { get; set; }
     }
 }
