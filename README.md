@@ -9,7 +9,7 @@ Generate views for:
 -Descriptive statistics
 -Data visualization of raw data and linear regression
 
-technologies Used:
+Technologies Used:
 -WPF MVVM
 -Relay Command
 -Property Change Notification
